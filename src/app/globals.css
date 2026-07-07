@@ -1,0 +1,110 @@
+@import "tailwindcss";
+
+:root {
+  --background: #faf8f5;
+  --foreground: #1c1917;
+  --color-mustard: #d99c26;
+  --color-mustard-dark: #b37f1b;
+  --color-editorial-card: #ffffff;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-mustard: var(--color-mustard);
+  --color-mustard-dark: var(--color-mustard-dark);
+  --color-editorial-card: var(--color-editorial-card);
+  
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+  --font-serif: var(--font-playfair);
+}
+
+body {
+  background-color: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-geist-sans), sans-serif;
+  overflow-x: hidden;
+}
+
+/* Elegant Editorial Buttons & Shadows */
+.editorial-shadow {
+  box-shadow: 0 4px 20px -2px rgba(28, 25, 23, 0.05), 0 2px 8px -1px rgba(28, 25, 23, 0.02);
+}
+
+.editorial-shadow-lg {
+  box-shadow: 0 20px 40px -4px rgba(28, 25, 23, 0.07), 0 8px 16px -2px rgba(28, 25, 23, 0.04);
+}
+
+.editorial-btn-mustard {
+  background-color: #d99c26;
+  color: #ffffff;
+  font-weight: 700;
+  font-family: var(--font-geist-mono), monospace;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.editorial-btn-mustard:hover {
+  background-color: #b37f1b;
+  transform: translateY(-1px);
+}
+
+.editorial-btn-mustard:active {
+  transform: translateY(0);
+}
+
+.editorial-btn-charcoal {
+  background-color: #1c1917;
+  color: #faf8f5;
+  font-weight: 700;
+  font-family: var(--font-geist-mono), monospace;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.editorial-btn-charcoal:hover {
+  background-color: #2e2a24;
+  transform: translateY(-1px);
+}
+
+.editorial-btn-charcoal:active {
+  transform: translateY(0);
+}
+
+.editorial-btn-outline {
+  background-color: transparent;
+  color: #1c1917;
+  border: 1px solid #1c1917;
+  font-weight: 700;
+  font-family: var(--font-geist-mono), monospace;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.editorial-btn-outline:hover {
+  background-color: #1c1917;
+  color: #faf8f5;
+}
+
+/* Custom transitions and overlays */
+.editorial-grid-bg {
+  background-size: 60px 60px;
+  background-image: 
+    linear-gradient(to right, rgba(28, 25, 23, 0.02) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(28, 25, 23, 0.02) 1px, transparent 1px);
+}
+
+@keyframes marquee {
+  0% { transform: translateX(0%); }
+  100% { transform: translateX(-50%); }
+}
+
+.animate-marquee {
+  display: flex;
+  width: max-content;
+  animation: marquee 30s linear infinite;
+}
